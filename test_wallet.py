@@ -26,10 +26,10 @@ def test_wallet_spend_cash_raises_exception_on_insufficient_amount():
         wallet.spend_cash(100)
 
 def test_wallet_loan_cash():
-    wallet = Wallet(20)
-    wallet.loan_cash(10)
-    assert wallet.balance == 10
-    assert wallet.loaned == 10
+    wallet = Wallet(100)
+    wallet.loan_cash(80)
+    assert wallet.balance == 20
+    assert wallet.loaned == 80
 
 @pytest.mark.parametrize("earned,spent,expected",[
     (30,10,20),
