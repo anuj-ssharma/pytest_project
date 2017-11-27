@@ -14,3 +14,9 @@ class Wallet(object):
 
     def add_cash(self, amount):
         self.balance += amount
+
+    def loan_cash(self,amount):
+        if self.balance < amount:
+            raise InsufficientAmount("Not enough available to loan {}".format(amount))
+        self.balance -= amount
+        self.loaned = amount
